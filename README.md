@@ -1,11 +1,17 @@
 # Tugas Kriptografi
 
-Nama: Yogis  
+Nama: Yogiswara  
 Mata Kuliah: Kriptografi  
 
 ## Deskripsi
-Program enkripsi/dekripsi sederhana menggunakan PHP.
+Program enkripsi dan dekripsi menggunakan PHP.
+
+## Fitur
+- Enkripsi teks
+- Dekripsi teks
 
 ## Cara Menjalankan
-1. Jalankan di Laragon/XAMPP
-2. Buka localhost/nama-folder
+1. Jalankan Laragon / XAMPP
+2. Masukkan folder ke htdocs/www
+3. Buka localhost/tugas-kripto-yogiswara
+
