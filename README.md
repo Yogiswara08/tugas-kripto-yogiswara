@@ -4,11 +4,8 @@ Nama: Yogiswara
 Mata Kuliah: Kriptografi  
 
 ## Deskripsi
-Program enkripsi dan dekripsi menggunakan PHP.
+Aplikasi berbasis web sederhana menggunakan HTML form dan PHP proses.
 
-## Fitur
-- Enkripsi teks
-- Dekripsi teks
 
 ## Cara Menjalankan
 1. Jalankan Laragon / XAMPP
