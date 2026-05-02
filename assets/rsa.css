@@ -1,0 +1,371 @@
+/* ── Reset ─────────────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+/* ── Navbar ─────────────────────────────────────────────── */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* ── Container ──────────────────────────────────────────── */
+.wrapper {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+/* ── Page Header ────────────────────────────────────────── */
+.page-header {
+    text-align: center;
+    margin-bottom: 36px;
+    color: white;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+/* ── Step Cards ─────────────────────────────────────────── */
+.steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.step-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: slide-up 0.4s ease-out both;
+}
+
+.step-card:nth-child(1) { animation-delay: 0.05s; }
+.step-card:nth-child(2) { animation-delay: 0.10s; }
+.step-card:nth-child(3) { animation-delay: 0.15s; }
+.step-card:nth-child(4) { animation-delay: 0.20s; }
+
+@keyframes slide-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    color: white;
+}
+
+/* Alice = biru (selaras warna utama) */
+.step-alice .step-header {
+    background: linear-gradient(135deg, #667eea 0%, #4f5de3 100%);
+}
+
+/* Bob = ungu (selaras warna sekunder) */
+.step-bob .step-header {
+    background: linear-gradient(135deg, #764ba2 0%, #9d3f9d 100%);
+}
+
+/* Decrypt = hijau sukses */
+.step-decrypt .step-header {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: #fff;
+}
+
+.step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.step-avatar {
+    font-size: 1.5rem;
+}
+
+.step-title h2 {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.step-title small {
+    font-size: 0.8rem;
+    opacity: 0.85;
+}
+
+.step-body {
+    padding: 22px 24px;
+}
+
+/* ── Field ──────────────────────────────────────────────── */
+.field {
+    margin-bottom: 18px;
+}
+
+.field:last-child {
+    margin-bottom: 0;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #667eea;
+    margin-bottom: 6px;
+}
+
+.field-value {
+    background: #f8f9fa;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    word-break: break-all;
+    white-space: pre-wrap;
+    line-height: 1.55;
+    max-height: 160px;
+    overflow-y: auto;
+    color: #374151;
+}
+
+.field-value.cipher {
+    background: #fffbeb;
+    border-color: #f59e0b;
+    color: #78350f;
+}
+
+.field-value.highlight {
+    background: #ecfdf5;
+    border-color: #10b981;
+    color: #065f46;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    max-height: none;
+}
+
+/* Form Elements */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #374151;
+    background: #fff;
+    transition: all 0.2s;
+    margin-bottom: 12px;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #4f5de3 100%);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
+}
+
+.btn-secondary {
+    background: #64748b;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.error-msg {
+    color: #e11d48;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* ── Details / Summary ──────────────────────────────────── */
+details {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-top: 20px;
+}
+
+summary {
+    font-weight: 600;
+    color: #4f5de3;
+    cursor: pointer;
+    outline: none;
+}
+
+/* ── Badge ──────────────────────────────────────────────── */
+.badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+.badge-pub  { background: #dbeafe; color: #1d4ed8; }
+.badge-priv { background: #fce7f3; color: #be185d; }
+.badge-ok   { background: #d1fae5; color: #065f46; }
+
+/* ── Copy Button ────────────────────────────────────────── */
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #f1f5f9;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    margin-top: 8px;
+    color: #475569;
+    transition: background 0.2s;
+}
+
+.copy-btn:hover {
+    background: #dbeafe;
+    border-color: #667eea;
+}
+
+/* ── Arrow Divider ──────────────────────────────────────── */
+.flow-arrow {
+    text-align: center;
+    font-size: 1.6rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 4px 0;
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.2);
+    margin-top: 3rem;
+    font-size: 0.85rem;
+}
+
+footer code {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .step-header { padding: 14px 18px; }
+    .step-body   { padding: 18px; }
+    .wrapper     { padding: 24px 14px 48px; }
+}
